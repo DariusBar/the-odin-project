@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="signup.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class = "col1">
+                <div id="title">
+                    <img src="green_leaf.webp">
+                    <p id = "title_name">TEA TRAVEL</p>
+                </div>
+                <p id = "source">Photo by <a href="https://pixabay.com/users/ymyphoto-23007053/">ymyphoto</a> on <a href="https://pixabay.com/photos/tea-tea-set-tradition-zen-culture-8664063/">Pixabay</a></p>
+            </div>
+            <form class = "col2" method="post" action="">
+                <div id = "intro_div">
+                    <p>
+                        This is not a real online service! You know you
+                        need something like this in your life to help you realize
+                        your deepest dreams.
+                        <br>
+                        <br>
+                        You <em>know</em> you want to.
+                    </p>
+                </div>
+                <div id="form_div">
+                    <p>Let's do this!</p>
+                    <div class="form_container">
+                        <div id="form_col1">
+                            <!-- Create a grid with two columns, each
+                             containing the forms. -->
+                            <p>
+                                <label for="first_name">FIRST NAME</label>
+                                <input type="text" id="first_name" name="first_name" pattern="[a-zA-z]{2,}">
+                            </p>
+                            <p>
+                                <label for="email">EMAIL</label>
+                                <input type="email" id="email" name="email" pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+                            </p>
+                            <p>
+                                <label for="password">PASSWORD</label>
+                                <input type="password" id="password" name="password" pattern=".{8,}">
+                            </p>
+                        </div>
+                        <div id="form_col1">
+                            <p>
+                                <label for="last_name">LAST NAME</label>
+                                <input type="text" id="last_name" name="last_name">
+                            </p>
+                            <p>
+                                <label for="phone">PHONE</label>
+                                <input type="tel" id="phone" name="phone">
+                            </p>
+                            <p>
+                                <label for="confirm_password">CONFIRM PASSWORD</label>
+                                <input type="password" id="confirm_password" name="confirm_password">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div  id="account_div">
+                    <button type="submit">Create Account</button>
+                    <p>Already have an account? <a href=""><i>Log in</i></a></p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
