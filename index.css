@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    background-color: yellow;
+    grid-template: repeat(2, min(50%, 100%)) / repeat(5, 50px);
+    grid-gap: 10px;
+    overflow: auto;
+    resize: both;
+    > div {
+        background-color:red;
+    }
+}

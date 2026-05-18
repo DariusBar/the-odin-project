@@ -134,6 +134,7 @@ button {
 }
 
 button:hover {
+    
     background-color: rgb(160, 173, 160); 
 }
 #intro_div {
