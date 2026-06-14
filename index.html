@@ -4,28 +4,169 @@
     <head>
         <title>All My Projects</title>
         <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div container="rootContainer">
+        <nav id="topNav">
+            <ul class="menuNav">
+                <li id="menuButtonContainer">
+                    <input type="image" src="Home_Images/menu.svg" id="menuButton">
+                </li>
+            </ul>
+            <ul class="pageNav">
+                <div>
+                    <li class="navButtons">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="navButtons">
+                        <a href="">About Me</a>
+                    </li>
+                    <li class="navButtons">
+                        <a href="">Contact Me</a>
+                    </li>
+                </div>
 
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="Sign-up-Form\signup.html">Sign Up</a>
-            <a href="Excercises\intermediate-css-html\02-holy-grail-mockup\index.html">Current Project</a>
-            <a href="admin-dashboard/admin.html">Admin Dashboard</a>
+            </ul>
         </nav>
-        <div class="container"> 
-            <div id="one">1</div>
-            <div id="two">2</div>
-            <div id="three">3</div>
-            <div id="four">4</div>
-            <div id="five">5</div>
-            <div id="six">6</div>
-            <div id="seven">7</div>
-            <div id="eight">8</div>
-            <div id="nine">9</div>
-            <div id="ten">10</div>
+        <div id="mainContent">
+            <nav id="sideNav" class="">
+                <ul>
+                    <li>
+                        <a href="#intermediate">Intermediate HTML and CSS</a>
+                    </li>
+                    <li>
+                        <a href="#advanced">Advanced HTML and CSS</a>
+                    </li>
+                    <li>
+                        <a href="#javascript">JavaScript</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="banner"> 
+            </div>
+            <div id="about">
+                    <div id="profileImg">
+                        <!-- <img src="Home_Images/Barb12.jpg" id="aboutImg"> -->
+                    </div>
+                    <div id="desc">
+                        <section class="aboutMe">
+                            <div class="aboutMeText">
+                                <div class="tabletImg">
+
+                                </div>
+                                <h1>About Me</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="linkButtons">
+                                <a href="https://github.com/DariusBar/the-odin-project" class="socialLink">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                                </a>
+                                <a href="https://www.linkedin.com/in/barbara-darius-ab9724241/" class="socialLink">   
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" />
+                                </a>
+                            </div>
+
+                        </section>
+                    </div>
+            </div>
+            <main>
+                <h1>My Work</h1>
+                <section id="intermediate" class="projects">
+                    <h2>Intermediate HTML and CSS</h2>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="Home_Images/Sign-up.png" class="web-image">
+                            <div class="proj-desc">
+                                <div class="proj-header">
+                                    <h3>Sign-up Page</h3>
+                                    <div class="linkContainer">
+                                        <a class="projLink" href="https://github.com/DariusBar/the-odin-project/tree/main/Sign-up-Form">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                                        </a>
+                                        <a class="projLink" href="https://dariusbar.github.io/the-odin-project/Sign-up-Form/signup.html">
+                                            <img src="Home_Images/open-in-new.svg">
+                                        </a>
+                                    </div>
+                                </div>
+                                <p>A webpage practicing the creating of forms and form validation.</p>   
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+                            <img src="Home_Images/Admin-dashboard.png" class="web-image">
+                            <div class="proj-desc">
+                                <div class="proj-header">
+                                    <h3>Admin Dashboard</h3>
+                                    <div class="linkContainer">
+                                        <a class="projLink" href="https://github.com/DariusBar/the-odin-project/tree/main/admin-dashboard">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                                        </a>
+                                        <a class="projLink" href="https://dariusbar.github.io/the-odin-project/admin-dashboard/admin.html">
+                                            <img src="Home_Images/open-in-new.svg">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <p>A webpage practicing setting up the layout of website using grids.</p>
+                            </div>
+
+                            
+                        </div>
+                        <div class="card">
+
+                        </div>
+                    </div>
+
+                </section>
+                <section id="advanced" class="projects">
+                    <h2>Advanced HTML and CSS</h2>
+                    <div class="card-container">
+                        <div class="card">
+
+                        </div>
+                    </div>
+
+                </section>
+                <!-- <section id="javascript" class="projects">
+                    <h2>JavaScript</h2>
+                    <div class="card-container">
+                        <div class="card">
+
+                        </div>
+                    </div> -->
+                </section>
+            </main>
+            <footer id="footer">
+                <section>
+                    <div class="footerCol">
+                        <h1>Contact Me</h1>
+                        <p>Please get in touch if you think our work could be mutually beneficial!</p>
+                        <p>1234 Random Road
+                            Random Town, California 12345
+                        </p>
+
+                        <p> 555-555-5555</p>
+                        <p> dariusbarbara793@gmail.com</p> 
+                        <div class="footerButtons">
+                            <a href="https://github.com/DariusBar/the-odin-project" class="socialLink">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/barbara-darius-ab9724241/" class="socialLink">   
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footerCol">
+                        <img src="Home_Images/Barb15.jpg" class="contactImg">
+                    </div>
+                </section>
+
+            </footer>
         </div>
+        <script src="index.js"></script>
     </body>
 </html>

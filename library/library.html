@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mmeta name="viewport" content="width=device-width, initial-scale=1"></mmeta>
+        <link rel="stylesheet" href="library.css">
+    </head>
+    <body>
+        <div class="buttonContainer">
+            <button id="openModal" class="btn" command="show-modal" commandfor="bookDialog">Add Book</button>
+            <button id="removeBook" class="btn">Remove Book</button>
+        </div>
+        <dialog id="bookDialog">
+            <h1>
+                Add a Book to the Library
+            </h1>
+            <form>
+                <label for="bookName">Book Name:</label>
+                <input type="text" id="bookName" name="bookName">
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+
+                <label for="pages"># of Pages:</label>
+                <input type="number" id="pages" name="pages">
+
+                <div class="radioBtn">
+                    <label for="haveRead">Read</label>
+                    <input type="radio" id="haveRead" name="Read" value="Read">
+                    <label for="notRead">Unread</label>
+                    <input type="radio" id="notRead" name="Read" value="unRead">
+                </div>
+                
+                <button id="addBook" class="formBtn">Add Book</button>
+                <button value="cancel" formmethod="dialog">Close Modal</button>
+                
+            </form>
+        </dialog>
+        <div id="bookcase" class="bookcase">
+            <div id="bookshelf" class="bookshelf">
+                <!-- <div class="book">
+                    <div class="title">
+                        <p>Book Name</p>
+                        <p>Author Name</p>
+                    </div>
+                    <div class="pages">
+                        <p>Pages</p>
+                    </div>
+                    <div class="bookBtns">
+                        <button clas="deleteBook">
+                            Delete Book
+                        </button>
+                        <button class="readBtn read">
+                            Read
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <script src="library.js"></script>
+    </body>
+</html>

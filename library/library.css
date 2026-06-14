@@ -1,0 +1,77 @@
+.buttonContainer {
+    display: flex;
+    justify-content: end;
+}
+
+
+.btn {
+    margin: 10px;
+}
+.bookcase {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: rgb(251 209 162);
+}
+
+.bookshelf {
+    display: inline-flex;
+    flex: auto;
+    flex-direction: row;
+    height: 500px;
+    width: 100%;
+    background-color: rgb(125 29 63);
+    row-gap: 100px;
+}
+
+.book {
+    width: max-content;
+    height: 100%;
+    display: grid;
+    /* grid-template-rows: repeat(3, minmax(min-content, max-content)); */
+    justify-content: center;
+    background-color: greenyellow;
+    outline: thin black solid;
+}
+
+.title {
+    align-self: center;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+    padding: 2rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: yellow;
+    width: 100%;
+}
+
+.pages p {
+    display: grid;
+    align-content: end;
+}
+
+.bookBtns {
+    justify-self: center;
+
+    padding: 1rem;
+}
+
+#bookDialog form {
+    display: grid;
+    justify-content: center;
+}
+
+#bookDialog form div {
+    display: flex;
+    justify-content: center;
+}

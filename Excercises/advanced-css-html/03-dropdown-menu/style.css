@@ -1,0 +1,48 @@
+.dropdown-container {
+  max-width: 250px;
+  margin: 40px auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 15px;
+  color: rgb(247, 247, 247);
+  cursor: pointer;
+}
+
+.menu-title {
+  background-color: rgb(163, 162, 162);
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(99, 97, 97);
+  transform-origin: top;
+  display: none;
+}
+
+ul.dropdown-menu li:hover {
+  background: rgb(47, 46, 46);
+}
+
+
+.dropdown-menu.visible {
+  display: block;
+  animation: 1s drop-down 1 normal;
+}
+
+@keyframes drop-down {
+  0% {
+    transform: scaleY(0);
+  } 
+
+  75% {
+    transform: scaleY(1.25);
+  }
+  
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+
