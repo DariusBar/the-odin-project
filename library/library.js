@@ -117,7 +117,7 @@ function displayBook(Book) {
     console.log(newBook);
 
     // Add an extra bookshelf if the bookshelf has 15 books in it;
-    if (myLibrary.length % 9 == 0) {
+    if (myLibrary.length % 6 == 0) {
         // create a new div with a class of bookshelf
         bookShelf = document.createElement("div");
         bookShelf.classList.add("bookshelf");
