@@ -5,7 +5,7 @@ function GameBoard() {
         [null, null, null]       
     ];
 
-    let full = false;
+    let isEnabled = true;
 
     const checkWin= () => {
         let horizString = "";
@@ -70,7 +70,7 @@ function GameBoard() {
         }
     }
 
-    return { board, checkWin, newBoard};
+    return { board, checkWin, newBoard, isEnabled};
         
 
 };
@@ -128,7 +128,7 @@ function Game() {
                 let button = document.getElementById(row + "" + col).firstElementChild;
                 console.log(button);
                 button.addEventListener("click", (event) => {
-                    if (gameBoard.board[row][col] == null) {
+                    if (gameBoard.board[row][col] == null && gameBoard.isEnabled) {
                         if (turn == true) {
                             gameBoard.board[row][col] = player1.marker;
                             //button.textContent = player1.marker;
@@ -175,6 +175,9 @@ function Game() {
         player1.name = player1Name;
         player2.name = player2Name;
 
+        gameBoard.newBoard();
+        displayBoard.drawBoard(gameBoard);
+        gameBoard.isEnabled = true;
         addActionListeners();
 
         gameLoop();
@@ -202,15 +205,19 @@ function Game() {
             } else {
                 turns.textContent = `${player2.name} wins!`;
             }
-            gameBoard.newBoard();
-            displayBoard.drawBoard(gameBoard);
+            // gameBoard.newBoard();
+            // displayBoard.drawBoard(gameBoard);
             gridSize = 0;
             turn = true;
             win = null;
+            gameBoard.isEnabled = false;
         } else if (gridSize == 9) {
             console.log("Its a tie!");
-            gameBoard.newBoard();
-            displayBoard.drawBoard();
+            // gameBoard.newBoard();
+            // displayBoard.drawBoard();
+            turn = true;
+            win = null;
+            gameBoard.isEnabled = false;
         }    
     };
 
