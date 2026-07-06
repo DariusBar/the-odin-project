@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Satisfy';
+    src: url('Satisfy-Regular.woff2') format('woff2'),
+        url('Satisfy-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 9999;
+}
+
+nav {
+    background-color: #ed8cb4; 
+    display: flex;
+    justify-content: end;
+
+}
+
+.navBtn {
+    background-color: #ffe6ef;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 10px;
+    border: none;
+    font-size: 1rem;
+}
+
+.navBtn:hover {
+    background-color:#fff7fa;
+    cursor: pointer;
+}
+
+#banner {
+    height: 500px;
+    background-image: url("pastry.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#banner > p {
+    font-family: Satisfy;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 5px 5px black;
+}
+
+#content > p {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+/** Menu Styling */
+.foodContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-color: #ffe6ef;
+    border-radius: 10%;
+
+}
+
+
+.foodCard {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    /* perspective: 20px; */
+    transition: transform .5s ease;
+    z-index: 1;
+}
+
+.foodCard:hover {
+    background-color: #fff7fa;
+    transform: scale(1.2);
+    z-index: 10;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.foodImg {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
+/** About section styling */
+#about {
+    display: grid;
+    justify-items: center;
+    background-color: #ffe6ef;
+    margin: 10px;
+    border-radius: 10px;
+}

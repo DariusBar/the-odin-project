@@ -18,4 +18,25 @@ export default {
             template: "./src/template.html",
         }),
     ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                // Handle fonts
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            }, 
+            {
+                test: /\.html$/i,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: "asset/resource",
+            },
+        ],
+    },
 };
