@@ -1,17 +1,17 @@
-import path from "node:path";
+import path from "node:path"
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
     mode: "development",
-    entry: "./src/index.js",
+    entry: "./src/todolistcontroller.js",
     output: {
         filename: "main.js",
         path: path.resolve(import.meta.dirname, "dist"),
         clean: true,
-    },
+    }, 
     devtool: "eval-source-map",
     devServer: {
-        watchFiles: ["./src/template.html"],
+        watchFiles: ["./src/template.html"]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -25,14 +25,18 @@ export default {
                 use: ["style-loader", "css-loader"],
             },
             {
+                // Handle fonts
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            }, 
+            {
                 test: /\.html$/i,
-                use: ["html-loader"]
+                use: ["html-loader"],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: "asset/resource",
             },
-            
         ],
     },
 };

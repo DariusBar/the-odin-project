@@ -3,7 +3,7 @@ import { isAfter, isThisSecond } from "date-fns";
 class Project {
     constructor(name) {
         // Sorted by due date
-        this.toDoList = [];
+        this.taskList = [];
         this.name = name;
     }
 
@@ -12,10 +12,10 @@ class Project {
     addTask(task) {
         // Push the task to the
         // end of the list
-        this.toDoList.push(task);
+        this.taskList.push(task);
 
         // Sortz list by date
-        this.toDoList.sort((x, y) => isAfter(x.dueDate, y.dueDate));
+        this.taskList.sort((x, y) => isAfter(x.dueDate, y.dueDate));
     }
 
     // Deletes a task from the list
@@ -25,9 +25,9 @@ class Project {
         // Iterate through the array until
         // you find a task with the matching id to
         // the task
-        for (let i = 0; i < this.toDoList.length; i++) {
-            if (this.todoDoList[i].id == taskID)  {
-                this.toDoList.splice(i, 1);
+        for (let i = 0; i < this.taskList.length; i++) {
+            if (this.taskList[i].id == taskID)  {
+                this.taskList.splice(i, 1);
                 break;
             }
         }
@@ -37,13 +37,13 @@ class Project {
 
     // Checks if a specific project contains a certain task
     containsTask(taskID) {
-        return this.toDoList.some((task) => task.id == taskID);
+        return this.taskList.some((task) => task.id == taskID);
     }
 
     // Returns the object of a task with this specific id
     getTask(taskID) {   
         if (this.containsTask(taskID)) {
-            return this.toDoList.find((task) => task.id == taskID);
+            return this.taskList.find((task) => task.id == taskID);
         }   
     }
 

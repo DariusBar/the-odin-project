@@ -1,13 +1,13 @@
 // Starts with an empty project
 
 // Holds all of the information of the webpage
-import { Project } from "./project";
-import { Task } from "./task";
+import { Project } from "./project.js";
+import { Task } from "./task.js";
 
 class ToDoList {
     constructor() {
-        this.projectList = [new Project("defaultProject")]
-        this.currentProject = projectList[0];
+        this.projectList = [new Project("defaultProject")];
+        this.currentProject = this.projectList[0];
     }
 
     // Contains functionality for:
@@ -18,18 +18,23 @@ class ToDoList {
 
     // Checks if a project exists through checking for the name
     containsProject(projectName) {
-        return projectList.some((project) => project.name == projectName);
+        return this.projectList.some((project) => project.name == projectName);
     }
-    // Switches between what project you're on
+    // Switches between what project you'rrbreak;e on
     switchProject(projectName) {
 
         
-        for (let i = 0; i < projectList.length; i++) {
-            if (projectList[i].name = projectName) {
-                currentProject = projectList[i];
+        for (let i = 0; i < this.projectList.length; i++) {
+            if (this.projectList[i].name == projectName) {
+                // Move the currentProject to the end of the list
+                let addToEnd = this.projectList.splice(i, 1);
+                this.projectList.push(addToEnd[0]);
+                this.currentProject = this.projectList[this.projectList.length - 1];
                 break;
             }
         }
+
+        return -1;
     }
 
     createTaskFromInput(name, desc, task, dueDate) {
@@ -40,13 +45,13 @@ class ToDoList {
 
     // Creates project and populates to the list
     createProjectFromInput(name) {
-        if (containsProject(projectName)) {
+        if (this.containsProject(name)) {
             // Error for project already existing
             console.log("Project Already Exists");
             return;
         }
         let newProject = new Project(name);
-        toDoList.add(newProject);
+        this.projectList.push(newProject);
     }
 
     deleteTask(taskID) {
@@ -54,14 +59,26 @@ class ToDoList {
     }
 
     deleteProject(projectName) {
+        if (this.projectList.length == 1) {
+            console.log("Cannot delete only project");
+            return;
+        }
         for (let i = 0; i < this.projectList.length; i++) {
             if (this.projectList[i].name == projectName)  {
+                // Cannot delete a project if there is only one project
+                // Switch to a new project
+                if (this.currentProject.name == projectName) {
+                    // Switches the project to the one before 
+                    // the currentProject since the currentProject is always
+                    // at the end
+                    this.currentProject = this.projectList[this.projectList.length - 2];
+                }
                 this.projectList.splice(i, 1);
-                break;
-            }
-        }
+                return;
 
-        console.log("Project does not exist");
+            }
+            console.log("Project does not exist.");
+        }
     }  
 
     // Add task to a specific project
@@ -71,7 +88,7 @@ class ToDoList {
         // Search for that specific project in the list
         // Check if the project already contains
         let newTask = new Task(name, desc, priority, dueDate, id);
-        currentProject.addTask(newTask);
+        this.currentProject.addTask(newTask);
     }
 
     // Editing a task at a later date
@@ -86,12 +103,16 @@ class ToDoList {
         // Identifies which task to edit based on its unique id
         // Retrieve the task of that specific id from the current
         // project
-        let task = currentProject.getTask(id);
+        let task = this.currentProject.getTask(id);
 
         task.name = name;
         task.desc = desc;
         task.priority = priority;
         task.dueDate = dueDate;
+    }
+
+    editProject(name) {
+        this.currentProject.name = name;
     }
 }
 
